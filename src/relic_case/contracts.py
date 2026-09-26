@@ -11,6 +11,7 @@ class CaseStage(StrEnum):
     EVIDENCE_SEALED = "evidence_sealed"
     ATTRIBUTION = "attribution"
     REQUESTED = "requested"
+    CONFIRMED = "confirmed"
     HANDOVER = "handover"
     ARCHIVED = "archived"
 
@@ -33,6 +34,22 @@ class Role(StrEnum):
     REVIEWER = "reviewer"
     APPROVER = "approver"
     CUSTODIAN = "custodian"
+
+
+class Action(StrEnum):
+    """各机构系统可对案件触发的动作名称。"""
+
+    SEAL_EVIDENCE = "seal_evidence"
+    SUBMIT_APPRAISAL = "submit_appraisal"
+    APPROVE_ATTRIBUTION = "approve_attribution"
+    REJECT_ATTRIBUTION = "reject_attribution"
+    DRAFT_REQUEST = "draft_request"
+    APPROVE_REQUEST = "approve_request"
+    RECORD_CONFIRMATION = "record_confirmation"
+    RECORD_HANDOVER = "record_handover"
+    CLOSE_CASE = "close_case"
+    RAISE_DISPUTE = "raise_dispute"
+    RESOLVE_DISPUTE = "resolve_dispute"
 
 
 def validate_external_id(value: str) -> str:
